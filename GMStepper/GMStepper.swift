@@ -154,6 +154,8 @@ import UIKit
     /// Color of the flashing animation on the buttons in case the value hit the limit.
     @IBInspectable public var limitHitAnimationColor: UIColor = UIColor(red:0.26, green:0.6, blue:0.87, alpha:1)
 
+    public var mapToText: (Double) -> String = { String(stringInterpolationSegment: $0) }
+    
     /**
         Width of the sliding animation. When buttons clicked, the middle label does a slide animation towards to the clicked button. Defaults to 5.
     */
@@ -210,8 +212,6 @@ import UIKit
     var labelOriginalCenter: CGPoint!
     var labelMaximumCenterX: CGFloat!
     var labelMinimumCenterX: CGFloat!
-    
-    var mapToText: (Double) -> String = { String(stringInterpolationSegment: $0) }
     
     enum LabelPanState {
         case Stable, HitRightEdge, HitLeftEdge
