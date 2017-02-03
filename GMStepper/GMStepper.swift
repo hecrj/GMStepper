@@ -23,11 +23,8 @@ import UIKit
             
             if isInteger && stepValue == 1.0 && items.count > 0 {
                 label.text = items[Int(value)]
-            }
-            else if showIntegerIfDoubleIsInteger && isInteger {
-                label.text = String(stringInterpolationSegment: Int(value))
             } else {
-                label.text = String(stringInterpolationSegment: value)
+                label.text = mapToText(value)
             }
 
             if oldValue != value {
@@ -213,7 +210,9 @@ import UIKit
     var labelOriginalCenter: CGPoint!
     var labelMaximumCenterX: CGFloat!
     var labelMinimumCenterX: CGFloat!
-
+    
+    var mapToText: (Double) -> String = { String(stringInterpolationSegment: $0) }
+    
     enum LabelPanState {
         case Stable, HitRightEdge, HitLeftEdge
     }
