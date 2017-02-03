@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable public class GMStepper: UIControl {
+@IBDesignable open class GMStepper: UIControl {
 
     /// Current value of the stepper. Defaults to 0.
     @IBInspectable public var value: Double = 0 {
